@@ -1,0 +1,10 @@
+---
+
+- name: Add ssh keys
+  hosts: all
+  roles:
+    - role: ssh-client
+      vars:
+        username: "{{ ssh_username }}"
+        key_name: "{{ ssh_key }}"
+

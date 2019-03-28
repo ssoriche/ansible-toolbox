@@ -1,0 +1,8 @@
+---
+
+- name: run command on remote system
+  shell: "{{ command }}"
+  register: command_results
+
+- local_action: copy content="{{ command_results.stdout_lines }}" dest="{{ playbook_dir }}/../logs/{{ inventory_hostname }}.stdout.log"
+  become: no

@@ -1,0 +1,8 @@
+---
+
+- name: Add ssh authorized keys
+  authorized_key:
+    user: "{{ username }}"
+    manage_dir: yes
+    state: present
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/{{ key_name }}.pub') }}"

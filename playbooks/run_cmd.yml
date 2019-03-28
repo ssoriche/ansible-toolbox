@@ -1,0 +1,6 @@
+---
+
+- name: Execute command
+  hosts: all
+  roles:
+    - role: run_cmd
