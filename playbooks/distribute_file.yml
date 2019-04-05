@@ -1,0 +1,10 @@
+---
+
+- name: Distribute file to remote server
+  hosts: all
+  tasks:
+    - synchronize:
+        mode: push
+        src: "{{ src_file }}"
+        dest: "{{ dest_file }}"
+        links: no

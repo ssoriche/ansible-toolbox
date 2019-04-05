@@ -72,3 +72,16 @@ ansible_user: new_project_user
 ssh_username: new_project_user
 ssh_key: new_project_key
 ```
+
+### distribute_file
+
+A simple playbook to replicate files or directories from the local system to all
+hosts. This module uses `rsync` to replicate the file to the remote hosts.
+
+```shell
+ansible-playbook \
+  -i inventories/samples \
+  --extra-vars "src_file=$PWD/README.md" \
+  --extra-vars "dest_file=tmp/README.md" \
+  playbooks/distribute_file.yml
+```
